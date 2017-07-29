@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">PackNGo</string>
+    <string name="title_activity_list_view">ListView</string>
+
+    <string-array name="adapter_list">
+        <item>Tent</item>
+        <item>Water</item>
+        <item>Toothbrush</item>
+        <item>Shampoo</item>
+        <item>Shorts</item>
+    </string-array>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="configure">Configure</string>
+    <string name="add_widget">Add widget</string>
+
+</resources>
