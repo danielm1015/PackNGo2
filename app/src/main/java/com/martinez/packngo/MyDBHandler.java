@@ -41,7 +41,6 @@ public class MyDBHandler extends SQLiteOpenHelper {
     }
 
     // Responsible for creating a table for the first time
-    // Implement Methods
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
@@ -56,6 +55,10 @@ public class MyDBHandler extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * Passing Task Object and putting TaskName into DB
+     * @param task
+     */
     public void insertTask(Task task){
 
         // Content value is built into android that allows you to add several values in one statement

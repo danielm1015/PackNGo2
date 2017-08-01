@@ -6,47 +6,23 @@
     android:layout_height="match_parent"
     tools:context="com.martinez.packngo.MainActivity">
 
-    <!--<ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/scrollView">-->
     <fragment
         android:id="@+id/fragment"
         android:name="com.martinez.packngo.ItemFragment"
         android:layout_width="match_parent"
         android:layout_height="270dp"
         tools:layout="@layout/fragment_item_list" />
-    <!--</ScrollView>-->
-
-
-
-   <!--
-   <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome!"
-        android:textSize="24sp"
-        android:layout_marginTop="116dp"
-        android:id="@+id/textView" /><Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="buttonClick"
-        android:text="Lets Pack"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/btngreen"/>-->
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save"
-        android:id="@+id/showAllButton"
+        android:id="@+id/saveButton"
         android:onClick="saveClick"
         android:background="@drawable/btngreen"
         android:layout_below="@+id/fragment"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="79dp" />
+        android:layout_alignLeft="@+id/displayButton"
+        android:layout_alignStart="@+id/displayButton" />
 
     <Button
         android:layout_width="wrap_content"

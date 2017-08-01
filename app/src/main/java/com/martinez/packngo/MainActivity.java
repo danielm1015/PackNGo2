@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -18,36 +19,32 @@ public class MainActivity extends AppCompatActivity {
     // Declare Widgets
     private EditText notesET;
     private TextView taskNameTV;
+    private Button saveButton;
     private SharedPreferences savedValues;
     private Task task;
 
     private MyDBHandler myDBHandler;
-    private CustomAdapter customAdapter;
+    SQLiteDatabase db;
+    //private CustomAdapter customAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        myDBHandler = new MyDBHandler(this);
+
         // Reference widgets
         taskNameTV = (TextView) findViewById(R.id.taskName);
         notesET = (EditText) findViewById(R.id.notesET);
+        saveButton = (Button) findViewById(R.id.saveButton);
 
         // get SharedPreferences object
         savedValues = getSharedPreferences("SavedValues", MODE_PRIVATE);
 
-        myDBHandler = new MyDBHandler(this);
-
     }
 
-    public void saveClick(View view) {
 
-        // Reading database for taskName
-//        myDBHandler.open();
-//        Cursor c =  myDBHandler.readEntry();
-//
-//        c.moveToFirst();
-
-    }
 
     public void displayClick(View view) {
 
@@ -61,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
 
         SharedPreferences.Editor editor = savedValues.edit();
-        editor.putString("notes", notesET.getText().toString());
+      //  editor.putString("notes", notesET.getText().toString());
         editor.commit();
 
         super.onPause();
@@ -72,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         super.onResume();
         String notes = savedValues.getString("notes", "");
-        notesET.setText(notes);
+//        notesET.setText(notes);
     }
 
 }

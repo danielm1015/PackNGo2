@@ -25,7 +25,7 @@ public class CustomAdapter extends ArrayAdapter<Task> {
     private List<Task> taskObjects;
     private EditText notes;
     private TextView taskNameTV;
-    private MyDBHandler myDBHandler;
+ //   private MyDBHandler myDBHandler;
 
     public CustomAdapter(Context context, int resource, List<Task> taskObjects) {
         super(context, resource, taskObjects);
@@ -38,14 +38,11 @@ public class CustomAdapter extends ArrayAdapter<Task> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
+        // Get Task Object from Array of Objects
         Task task =  taskObjects.get(position);
-        myDBHandler = new MyDBHandler(getContext());
+        // Initializing DBhandler
+ //       myDBHandler = new MyDBHandler(getContext());
 
-        // Inflating means reading the XML file that describes a layout
-        // (or GUI element) and to create the actual objects that correspond to it,
-        // and thus make the object visible within an Android app.
-
-        // Passes an ID to get a handle on a system level service
         LayoutInflater inflater =
                 (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.fragment_item, null);
@@ -53,20 +50,19 @@ public class CustomAdapter extends ArrayAdapter<Task> {
         // Referencing widgets from list view item row XML
         CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkBox);
 
-        taskNameTV = (TextView) view.findViewById(R.id.taskName);
+        taskNameTV = view.findViewById(R.id.taskName);
         taskNameTV.setText(task.getTaskName());
 
-        myDBHandler.insertTask(task);
+       // notes = view.findViewById(R.id.notesET);
 
-//         notes = (EditText) view.findViewById(R.id.notesET);
 
- /*       checkBox.setOnClickListener(new View.OnClickListener() {
+   /*    checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
             }
-        });
-*/
+        });*/
+
         return view;
     }
 
