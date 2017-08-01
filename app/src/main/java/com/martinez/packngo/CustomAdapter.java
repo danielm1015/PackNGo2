@@ -25,7 +25,7 @@ public class CustomAdapter extends ArrayAdapter<Task> {
     private List<Task> taskObjects;
     private EditText notes;
     private TextView taskNameTV;
- //   private MyDBHandler myDBHandler;
+    private CheckBox checkBox;
 
     public CustomAdapter(Context context, int resource, List<Task> taskObjects) {
         super(context, resource, taskObjects);
@@ -40,15 +40,13 @@ public class CustomAdapter extends ArrayAdapter<Task> {
 
         // Get Task Object from Array of Objects
         Task task =  taskObjects.get(position);
-        // Initializing DBhandler
- //       myDBHandler = new MyDBHandler(getContext());
 
         LayoutInflater inflater =
                 (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.fragment_item, null);
 
         // Referencing widgets from list view item row XML
-        CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkBox);
+         checkBox = view.findViewById(R.id.checkBox);
 
         taskNameTV = view.findViewById(R.id.taskName);
         taskNameTV.setText(task.getTaskName());

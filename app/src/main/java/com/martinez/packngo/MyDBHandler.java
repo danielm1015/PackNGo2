@@ -44,13 +44,13 @@ public class MyDBHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
-//        String createTask = "CREATE TABLE " + TABLE_TASK + "(" +
-//                TASK_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-//                TASK_NAME + " TEXT NOT NULL, " +
-//                TASK_NOTES + " TEXT NOT NULL);";
         String createTask = "CREATE TABLE " + TABLE_TASK + "(" +
                 TASK_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                TASK_NAME + " TEXT);";
+                TASK_NAME + " TEXT NOT NULL, " +
+                TASK_NOTES + " TEXT NOT NULL);";
+//        String createTask = "CREATE TABLE " + TABLE_TASK + "(" +
+//                TASK_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+//                TASK_NAME + " TEXT);";
         sqLiteDatabase.execSQL(createTask);
 
     }
@@ -64,6 +64,7 @@ public class MyDBHandler extends SQLiteOpenHelper {
         // Content value is built into android that allows you to add several values in one statement
         ContentValues values = new ContentValues();
         values.put(TASK_NAME, task.getTaskName());
+        values.put(TASK_NAME, task.getNotes());
 
         // Call the open method to get reference to the database
         open();

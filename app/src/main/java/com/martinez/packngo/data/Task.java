@@ -14,9 +14,9 @@ public class Task {
 
     }
 
-    public Task( String taskName) {
+    public Task( String taskName, String notes) {
         this.taskName = taskName;
-       // this.notes = notes;
+        this.notes = notes;
 
     }
 

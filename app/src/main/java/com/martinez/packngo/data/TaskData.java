@@ -18,10 +18,10 @@ public class TaskData {
     }
 
     public TaskData() {
-        addItem(new Task("Tent"));
-        /*addItem(new Task("Food", "Notes"));
+        addItem(new Task("Tent", "Notes"));
+        addItem(new Task("Food", "Notes"));
         addItem(new Task("Money", "Notes"));
-        addItem(new Task("Sleeping bag", "Notes"));*/
+        addItem(new Task("Sleeping bag", "Notes"));
 
     }
 

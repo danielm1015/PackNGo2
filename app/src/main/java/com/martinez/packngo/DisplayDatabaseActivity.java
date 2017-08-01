@@ -8,7 +8,7 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-public class DisplayListActivity extends AppCompatActivity {
+public class DisplayDatabaseActivity extends AppCompatActivity {
 
         // Define the widget variable layout
         private TableLayout tableLayout;
@@ -19,7 +19,7 @@ public class DisplayListActivity extends AppCompatActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_display_list);
+            setContentView(R.layout.activity_database_list);
 
             // Navigate back to parent class
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

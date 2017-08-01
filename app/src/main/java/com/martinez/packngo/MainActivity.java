@@ -1,9 +1,7 @@
 package com.martinez.packngo;
 
-import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -45,31 +43,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     public void displayClick(View view) {
 
         // Open up a new screen of task/notes
-        Intent i = new Intent(this, DisplayListActivity.class);
+        Intent i = new Intent(this, DisplayDatabaseActivity.class);
         startActivity(i);
     }
 
 
-    @Override
-    protected void onPause() {
-
-        SharedPreferences.Editor editor = savedValues.edit();
-      //  editor.putString("notes", notesET.getText().toString());
-        editor.commit();
-
-        super.onPause();
-    }
-
-    @Override
-    protected void onResume() {
-
-        super.onResume();
-        String notes = savedValues.getString("notes", "");
-//        notesET.setText(notes);
-    }
+//    @Override
+//    protected void onPause() {
+//
+//        SharedPreferences.Editor editor = savedValues.edit();
+//      //  editor.putString("notes", notesET.getText().toString());
+//        editor.commit();
+//
+//        super.onPause();
+//    }
+//
+//    @Override
+//    protected void onResume() {
+//
+//        super.onResume();
+//        String notes = savedValues.getString("notes", "");
+////        notesET.setText(notes);
+//    }
 
 }
